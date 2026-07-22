@@ -6,13 +6,13 @@
   <meta name="google-site-verification" content="DlTSa9OOIkCU733npBFB5oGXO4vnJ0NCRI8F_gT3uis" />
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Cybersecurity portfolio of Mohammed Khanfar. Showcasing projects, certifications, AI chatbot development, n8n automation, and web security skills.">
+  <meta name="description" content="Cybersecurity portfolio of Mohammed Khanfar. Networking, Linux, security fundamentals, AI chatbots, n8n automation, and web security projects.">
   <meta name="keywords" content="Mohammed Khanfar, cybersecurity, portfolio, projects, AI chatbot, n8n automation, WordPress developer, security analyst, Mississauga">
   <meta name="author" content="Mohammed Khanfar">
 
-  <!-- Open Graph (LinkedIn, Facebook, etc.) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Mohammed Khanfar | Cybersecurity Portfolio">
-  <meta property="og:description" content="Explore my cybersecurity projects, certifications, and automation work.">
+  <meta property="og:description" content="Explore cybersecurity projects, AI chatbot automation, n8n workflows, and web security implementations.">
   <meta property="og:image" content="MK1.jpg">
   <meta property="og:url" content="https://mohammedkhanfarr.github.io/mohammed-Khanfar-portfolio">
 
@@ -20,231 +20,543 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    :root {
+      --bg-main: #050816;
+      --bg-card: #0f172a;
+      --bg-soft: #020617;
+      --accent: #22c55e;
+      --accent-soft: #4ade80;
+      --accent-secondary: #38bdf8;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-soft: #1f2937;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #0f172a;
-      color: #e5e7eb;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0f172a 0, #020617 40%, #000 100%);
+      color: var(--text-main);
     }
 
-    /* Header Banner */
-    .banner {
-      background: linear-gradient(135deg, #1e3a8a, #0ea5e9);
-      padding: 40px;
-      text-align: center;
-      color: white;
+    a {
+      color: var(--accent-secondary);
+      text-decoration: none;
     }
 
-    .banner img {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      border: 4px solid white;
-      margin-bottom: 20px;
+    a:hover {
+      text-decoration: underline;
     }
 
-    .content {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
+    /* Navigation */
     nav {
-      background:#1f2937;
-      padding:10px;
-      text-align:center;
       position: sticky;
       top: 0;
       z-index: 100;
+      background: rgba(5, 8, 22, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-soft);
     }
 
-    nav a {
-      color:#38bdf8;
-      margin:10px;
-      text-decoration:none;
-      font-weight:bold;
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
     }
 
-    h1, h2, h3 {
-      color: #38bdf8;
+    .nav-logo {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: var(--accent-soft);
     }
 
+    .nav-links a {
+      margin-left: 18px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-secondary);
+    }
+
+    /* Layout */
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 30px 20px 60px;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+      gap: 30px;
+      align-items: center;
+      padding: 30px 0 40px;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .hero-main-title {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .hero-highlight {
+      color: var(--accent-soft);
+    }
+
+    .hero-subtitle {
+      margin-top: 10px;
+      font-size: 16px;
+      color: var(--text-muted);
+    }
+
+    .hero-pill-row {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text-muted);
+    }
+
+    .pill-accent {
+      border-color: var(--accent-soft);
+      color: var(--accent-soft);
+    }
+
+    .hero-bio {
+      margin-top: 18px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-main);
+    }
+
+    .hero-actions {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #22c55e, #4ade80);
+      color: #022c22;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+    }
+
+    .hero-photo-card {
+      background: radial-gradient(circle at top, #1e293b 0, #020617 60%);
+      border-radius: 18px;
+      padding: 22px;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-photo-card img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 3px solid var(--accent-secondary);
+      display: block;
+      margin: 0 auto 16px;
+      object-fit: cover;
+    }
+
+    .hero-photo-name {
+      text-align: center;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .hero-photo-role {
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .hero-photo-meta {
+      margin-top: 14px;
+      font-size: 12px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    /* Section */
     .section {
-      margin-bottom: 30px;
-      border-bottom: 1px solid #1f2937;
-      padding-bottom: 20px;
+      margin-top: 40px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-tagline {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* Two-column layout */
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+      gap: 24px;
+    }
+
+    /* Cards */
+    .card {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 14px;
+      padding: 18px 18px 16px;
+      border: 1px solid var(--border-soft);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .card-subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .card-body {
+      font-size: 13px;
+      color: var(--text-main);
+      line-height: 1.7;
+      margin-top: 6px;
+    }
+
+    .chip-row {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .chip {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #020617;
+      border: 1px solid #1f2937;
+      color: var(--text-muted);
+    }
+
+    .chip-strong {
+      border-color: var(--accent-secondary);
+      color: var(--accent-secondary);
+    }
+
+    /* Lists */
+    ul {
+      margin: 8px 0 0;
+      padding-left: 18px;
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--text-main);
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    /* Skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 10px;
+    }
+
+    .skill-group {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 12px;
+      padding: 10px 12px;
+      border: 1px solid var(--border-soft);
+    }
+
+    .skill-group-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-secondary);
+      margin-bottom: 6px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
     }
 
     .tag {
-      display: inline-block;
-      background: #1f2937;
-      color: #e5e7eb;
+      font-size: 11px;
       padding: 4px 8px;
-      margin: 3px;
-      border-radius: 6px;
+      border-radius: 999px;
+      background: #020617;
+      border: 1px solid #1f2937;
+      color: var(--text-muted);
+    }
+
+    /* Timeline */
+    .timeline-item {
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed #1f2937;
+    }
+
+    .timeline-title {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .timeline-meta {
       font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
     }
 
-    /* Project Cards */
-    .card {
-      background: #1f2937;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+      gap: 24px;
     }
 
-    .button {
-      display: inline-block;
-      background: #38bdf8;
-      color: #0f172a;
-      padding: 10px 15px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 10px;
+    .contact-item {
+      font-size: 13px;
+      margin-bottom: 8px;
+      color: var(--text-main);
     }
 
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-soft);
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-photo-card {
+        order: -1;
+      }
+      .two-col,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-main-title {
+        font-size: 26px;
+      }
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- ⭐ Navigation Bar -->
+  <!-- Navigation -->
   <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
+    <div class="nav-inner">
+      <div class="nav-logo">MK | Cybersecurity</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
   </nav>
 
-  <!-- ⭐ Header Banner -->
-  <div class="banner">
-    <img src="MK1.jpg" alt="Mohammed Khanfar">
-    <h1>Mohammed Khanfar</h1>
-    <p>Cybersecurity • Web Development • AI Chatbots • Automation</p>
-  </div>
+  <div class="page">
 
-  <div class="content">
-
-    <!-- ⭐ About Section -->
-    <div class="section" id="about">
-      <h2>About Me</h2>
-      <p>
-        Cybersecurity professional with hands-on experience in networking, Linux system administration,
-        threat modeling, risk management, scripting, WordPress development, chatbot creation, and workflow
-        automation with n8n. Strong problem-solving abilities and proven reliability in fast-paced environments.
-      </p>
-    </div>
-
-    <!-- ⭐ Skills Section -->
-    <div class="section" id="skills">
-      <h2>Skills</h2>
+    <!-- Hero -->
+    <section class="hero" id="about">
       <div>
-        <span class="tag">Python</span>
-        <span class="tag">C/C++</span>
-        <span class="tag">Bash</span>
-        <span class="tag">Linux</span>
-        <span class="tag">Windows Security</span>
-        <span class="tag">TCP/IP Networking</span>
-        <span class="tag">Cryptography</span>
-        <span class="tag">Wireshark</span>
-        <span class="tag">TCPDump</span>
-        <span class="tag">VMware</span>
-        <span class="tag">Metasploit</span>
-        <span class="tag">Firewalls / VPN / IDS/IPS</span>
-        <span class="tag">Git</span>
-        <span class="tag">WordPress</span>
-        <span class="tag">SEO</span>
-        <span class="tag">Aminos Chatbot</span>
-        <span class="tag">n8n Automation</span>
-        <span class="tag">AWS Basics</span>
-        <span class="tag">Oracle Cloud Basics</span>
-        <span class="tag">HTML</span>
-      </div>
-    </div>
+        <div class="hero-main-title">
+          <span class="hero-highlight">Mohammed</span> Khanfar
+        </div>
+        <div class="hero-subtitle">
+          Cybersecurity • Networking • Linux • Web Security • AI Chatbots • Automation
+        </div>
 
-    <!-- ⭐ Project Cards Section -->
-    <div class="section" id="projects">
-      <h2>Projects</h2>
+        <div class="hero-pill-row">
+          <div class="pill pill-accent">Cybersecurity Professional</div>
+          <div class="pill">Sheridan College – Cybersecurity (In Progress)</div>
+          <div class="pill">Mississauga, ON</div>
+        </div>
 
-      <div class="card">
-        <h3>Simcoe Cosmetic Clinic Digital Presence Enhancement (2026)</h3>
-        <p>Developed a secure WordPress website, built an Aminos AI chatbot, and created an n8n workflow to automate client data processing.</p>
-        <a class="button" href="#contact">Contact Me</a>
+        <div class="hero-bio">
+          Cybersecurity professional with hands-on experience in networking, Linux system administration,
+          threat modeling, risk management, scripting, WordPress development, chatbot creation, and workflow
+          automation with n8n. Strong problem-solving abilities and proven reliability in fast-paced environments.
+        </div>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">
+            <span>●</span> View Projects
+          </a>
+          <a href="#contact" class="btn-secondary">
+            <span>⬇</span> Download Resume
+          </a>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>AI Chatbot Automation</h3>
-        <p>Designed chatbot flows, trained models, and integrated automated lead capture into email workflows.</p>
+      <div class="hero-photo-card">
+        <img src="MK1.jpg" alt="Mohammed Khanfar">
+        <div class="hero-photo-name">Mohammed Khanfar</div>
+        <div class="hero-photo-role">Cybersecurity & Automation | Web Security & AI Chatbots</div>
+        <div class="hero-photo-meta">
+          Mississauga, ON • Shoppers Drug Mart (Merchandiser, 2020–Present) • Employee of the Month (9×)
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+      <div class="section-header">
+        <div class="section-title">Skills & Tools</div>
+        <div class="section-tagline">Technical depth with practical implementation</div>
       </div>
 
-      <div class="card">
-        <h3>Cybersecurity Lab Environment</h3>
-        <p>Built virtual labs using VMware, performed network analysis, and practiced ethical penetration testing with Metasploit.</p>
-      </div>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <div class="skill-group-title">Core Cybersecurity</div>
+          <div class="skill-tags">
+            <span class="tag">CIA Triad</span>
+            <span class="tag">Threat Modeling</span>
+            <span class="tag">Risk Management</span>
+            <span class="tag">Incident Detection</span>
+            <span class="tag">Firewalls</span>
+            <span class="tag">VPNs</span>
+            <span class="tag">IDS/IPS</span>
+            <span class="tag">Cryptography</span>
+          </div>
+        </div>
 
-    </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Systems & Scripting</div>
+          <div class="skill-tags">
+            <span class="tag">Python</span>
+            <span class="tag">C/C++</span>
+            <span class="tag">Bash</span>
+            <span class="tag">Linux</span>
+            <span class="tag">Windows Security</span>
+            <span class="tag">Automation</span>
+            <span class="tag">Log Analysis</span>
+          </div>
+        </div>
 
-    <!-- ⭐ Experience Section -->
-    <div class="section" id="experience">
-      <h2>Experience</h2>
+        <div class="skill-group">
+          <div class="skill-group-title">Networking & Analysis</div>
+          <div class="skill-tags">
+            <span class="tag">TCP/IP</span>
+            <span class="tag">DNS</span>
+            <span class="tag">DHCP</span>
+            <span class="tag">Routing</span>
+            <span class="tag">Switching</span>
+            <span class="tag">Wireshark</span>
+            <span class="tag">TCPDump</span>
+            <span class="tag">Metasploit</span>
+          </div>
+        </div>
 
-      <h3>Merchandiser – Shoppers Drug Mart (2020 – Present)</h3>
-      <p>Mississauga, ON</p>
-      <ul>
-        <li>Operated equipment to organize stock efficiently.</li>
-        <li>Opened and closed store independently while maintaining standards.</li>
-        <li>Prepared loss prevention and store reports with attention to detail.</li>
-        <li>Delivered customer service including passport photo services.</li>
-        <li>Recognized as Employee of the Month nine times.</li>
-      </ul>
-
-      <h3>Web Development & AI Chatbot Project – Simcoe Cosmetic Clinic (2026)</h3>
-      <p>Barrie, ON</p>
-      <ul>
-        <li>Developed SEO-optimized WordPress website.</li>
-        <li>Implemented HTTPS and secure authentication.</li>
-        <li>Built Aminos chatbot and integrated into website.</li>
-        <li>Created n8n workflow for secure data processing.</li>
-      </ul>
-    </div>
-
-    <!-- ⭐ Education Section -->
-    <div class="section" id="education">
-      <h2>Education & Certifications</h2>
-      <h3>Bachelor of Information Sciences (Cybersecurity)</h3>
-      <p>Sheridan College – Expected Graduation: 2027/2028</p>
-
-      <h3>Certifications</h3>
-      <ul>
-        <li>Microsoft Cybersecurity Analyst</li>
-        <li>Microsoft Azure Security Specialization</li>
-        <li>IBM Generative AI for Cybersecurity Professionals</li>
-        <li>Cyber Crime Academy – Peel Regional Police</li>
-        <li>ThinkCloudly Cybersecurity Bootcamp</li>
-        <li>ThinkCloudly IT Auditing & GRC Bootcamp</li>
-        <li>Wireshark for Security</li>
-        <li>Metasploit Ethical Penetration Testing</li>
-        <li>Analyze Network Traffic with TCPDump</li>
-        <li>Introduction to Bash Shell Scripting</li>
-        <li>Microsoft Security, Compliance & Identity Fundamentals</li>
-        <li>Foundations of Cybersecurity – Google</li>
-        <li>Dive Into Kubernetes</li>
-      </ul>
-    </div>
-
-    <!-- ⭐ Contact Section -->
-    <div class="section" id="contact">
-      <h2>Contact</h2>
-      <p><strong>Email:</strong> <a href="mailto:mohammedkhanfar32@gmail.com">mohammedkhanfar32@gmail.com</a></p>
-      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mohammed-khanfar-46721721b/" target="_blank">linkedin.com/in/mohammed-khanfar-46721721b</a></p>
-      <p><strong>Location:</strong> Mississauga, ON</p>
-    </div>
-
-  </div>
-
-</body>
-</html>
-
+        <div class="skill-group">
+          <div class="skill-group-title">Web & Automation</div>
+          <div class="skill-tags">
+            <span class="tag">WordPress</span>
+            <span class="tag">DreamHost</span>
+            <span class="tag">SEO</span>
+            <span class="tag">HTML</span>
+            <span class="tag">Aminos Chat Bot</span>
+            <span class="tag">n8n Automation</span>
