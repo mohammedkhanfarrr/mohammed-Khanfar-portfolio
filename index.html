@@ -6,23 +6,59 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
+      margin: 0;
       background: #0f172a;
       color: #e5e7eb;
     }
+
+    /* Header Banner */
+    .banner {
+      background: linear-gradient(135deg, #1e3a8a, #0ea5e9);
+      padding: 40px;
+      text-align: center;
+      color: white;
+    }
+
+    .banner img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid white;
+      margin-bottom: 20px;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    nav {
+      background:#1f2937;
+      padding:10px;
+      text-align:center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      color:#38bdf8;
+      margin:10px;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
     h1, h2, h3 {
       color: #38bdf8;
     }
-    a {
-      color: #a5b4fc;
-    }
+
     .section {
       margin-bottom: 30px;
       border-bottom: 1px solid #1f2937;
       padding-bottom: 20px;
     }
+
     .tag {
       display: inline-block;
       background: #1f2937;
@@ -32,141 +68,167 @@
       border-radius: 6px;
       font-size: 12px;
     }
+
+    /* Project Cards */
+    .card {
+      background: #1f2937;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #38bdf8;
+      color: #0f172a;
+      padding: 10px 15px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
   </style>
 </head>
 
 <body>
 
   <!-- ⭐ Navigation Bar -->
-  <nav style="background:#1f2937;padding:10px;text-align:center;">
-    <a href="#about" style="color:#38bdf8;margin:10px;">About</a>
-    <a href="#skills" style="color:#38bdf8;margin:10px;">Skills</a>
-    <a href="#projects" style="color:#38bdf8;margin:10px;">Projects</a>
-    <a href="#contact" style="color:#38bdf8;margin:10px;">Contact</a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
   </nav>
 
-  <h1>Mohammed Khanfar</h1>
-  <p>Cybersecurity student and project contributor with experience in networking, Linux, scripting, web development, AI chatbots, and workflow automation.</p>
-
-  <!-- ⭐ Contact Section -->
-  <div class="section" id="contact">
-    <h2>Contact</h2>
-    <p><strong>Location:</strong> Mississauga, ON</p>
-    <p><strong>Email:</strong> <a href="mailto:mohammedkhanfar32@gmail.com">mohammedkhanfar32@gmail.com</a></p>
-    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mohammed-khanfar-46721721b/" target="_blank">linkedin.com/in/mohammed-khanfar-46721721b</a></p>
+  <!-- ⭐ Header Banner -->
+  <div class="banner">
+    <img src="https://via.placeholder.com/140" alt="Profile Photo">
+    <h1>Mohammed Khanfar</h1>
+    <p>Cybersecurity • Web Development • AI Chatbots • Automation</p>
   </div>
 
-  <!-- ⭐ About Section -->
-  <div class="section" id="about">
-    <h2>Professional Summary</h2>
-    <p>
-      Cybersecurity professional with hands-on experience in networking, Linux system administration, threat modeling, risk management,
-      and virtual lab environments using VMware. Skilled in Python, C/C++, Bash scripting, WordPress development, chatbot creation,
-      and workflow automation with n8n. Strong problem-solving abilities and proven reliability in fast-paced environments.
-    </p>
-  </div>
+  <div class="content">
 
-  <!-- ⭐ Skills Section -->
-  <div class="section" id="skills">
-    <h2>Skills</h2>
-    <div>
-      <span class="tag">Python</span>
-      <span class="tag">C/C++</span>
-      <span class="tag">Bash</span>
-      <span class="tag">Linux</span>
-      <span class="tag">Windows Security</span>
-      <span class="tag">TCP/IP Networking</span>
-      <span class="tag">Cryptography</span>
-      <span class="tag">Wireshark</span>
-      <span class="tag">TCPDump</span>
-      <span class="tag">VMware</span>
-      <span class="tag">Metasploit</span>
-      <span class="tag">Firewalls / VPN / IDS/IPS</span>
-      <span class="tag">Git</span>
-      <span class="tag">WordPress</span>
-      <span class="tag">SEO</span>
-      <span class="tag">Aminos Chatbot</span>
-      <span class="tag">n8n Automation</span>
-      <span class="tag">AWS Basics</span>
-      <span class="tag">Oracle Cloud Basics</span>
-      <span class="tag">HTML</span>
+    <!-- ⭐ About Section -->
+    <div class="section" id="about">
+      <h2>About Me</h2>
+      <p>
+        Cybersecurity professional with hands-on experience in networking, Linux system administration,
+        threat modeling, risk management, scripting, WordPress development, chatbot creation, and workflow
+        automation with n8n. Strong problem-solving abilities and proven reliability in fast-paced environments.
+      </p>
     </div>
-  </div>
 
-  <!-- ⭐ Experience Section -->
-  <div class="section" id="experience">
-    <h2>Experience</h2>
+    <!-- ⭐ Skills Section -->
+    <div class="section" id="skills">
+      <h2>Skills</h2>
+      <div>
+        <span class="tag">Python</span>
+        <span class="tag">C/C++</span>
+        <span class="tag">Bash</span>
+        <span class="tag">Linux</span>
+        <span class="tag">Windows Security</span>
+        <span class="tag">TCP/IP Networking</span>
+        <span class="tag">Cryptography</span>
+        <span class="tag">Wireshark</span>
+        <span class="tag">TCPDump</span>
+        <span class="tag">VMware</span>
+        <span class="tag">Metasploit</span>
+        <span class="tag">Firewalls / VPN / IDS/IPS</span>
+        <span class="tag">Git</span>
+        <span class="tag">WordPress</span>
+        <span class="tag">SEO</span>
+        <span class="tag">Aminos Chatbot</span>
+        <span class="tag">n8n Automation</span>
+        <span class="tag">AWS Basics</span>
+        <span class="tag">Oracle Cloud Basics</span>
+        <span class="tag">HTML</span>
+      </div>
+    </div>
 
-    <h3>Merchandiser – Shoppers Drug Mart (2020 – Present)</h3>
-    <p>Mississauga, ON</p>
-    <ul>
-      <li>Operated equipment to organize stock efficiently.</li>
-      <li>Opened and closed store independently while maintaining standards.</li>
-      <li>Prepared loss prevention and store reports with attention to detail.</li>
-      <li>Delivered customer service including passport photo services.</li>
-      <li>Recognized as Employee of the Month nine times for reliability and performance.</li>
-    </ul>
+    <!-- ⭐ Project Cards Section -->
+    <div class="section" id="projects">
+      <h2>Projects</h2>
 
-    <h3>Web Development & AI Chatbot Project – Simcoe Cosmetic Clinic (2026)</h3>
-    <p>Barrie, ON</p>
-    <ul>
-      <li>Designed and developed a user-friendly, SEO-optimized website using WordPress and DreamHost.</li>
-      <li>Implemented basic website security including HTTPS and secure authentication practices.</li>
-      <li>Structured content to improve website performance and usability.</li>
-      <li>Built and configured an AI chatbot using Aminos to automate customer interactions.</li>
-      <li>Developed chatbot conversation flows to handle inquiries and guide users.</li>
-      <li>Integrated chatbot into the website to enhance user engagement.</li>
-      <li>Designed an n8n workflow to capture and process user data securely.</li>
-    </ul>
-  </div>
+      <div class="card">
+        <h3>Simcoe Cosmetic Clinic Digital Presence Enhancement (2026)</h3>
+        <p>Developed a secure WordPress website, built an Aminos AI chatbot, and created an n8n workflow to automate client data processing.</p>
+        <a class="button" href="#contact">Contact Me</a>
+      </div>
 
-  <!-- ⭐ Projects Section -->
-  <div class="section" id="projects">
-    <h2>Projects</h2>
+      <div class="card">
+        <h3>AI Chatbot Automation</h3>
+        <p>Designed chatbot flows, trained models, and integrated automated lead capture into email workflows.</p>
+      </div>
 
-    <h3>Simcoe Cosmetic Clinic Digital Presence Enhancement – Riipen (2026)</h3>
-    <ul>
-      <li>Developed and deployed a secure WordPress website with HTTPS and authentication best practices.</li>
-      <li>Built and trained an Aminos AI chatbot to automate client interactions.</li>
-      <li>Created an n8n workflow to capture and process user data.</li>
-      <li>Applied basic security practices to protect against common web vulnerabilities.</li>
-      <li>Delivered full project including deployment, testing, and documentation.</li>
-    </ul>
-  </div>
+      <div class="card">
+        <h3>Cybersecurity Lab Environment</h3>
+        <p>Built virtual labs using VMware, performed network analysis, and practiced ethical penetration testing with Metasploit.</p>
+      </div>
 
-  <!-- ⭐ Education Section -->
-  <div class="section" id="education">
-    <h2>Education & Certifications</h2>
-    <h3>Bachelor of Information Sciences (Cybersecurity)</h3>
-    <p>Sheridan College – Expected Graduation: 2027/2028</p>
+    </div>
 
-    <h3>Selected Courses & Certifications</h3>
-    <ul>
-      <li>Microsoft Cybersecurity Analyst</li>
-      <li>Microsoft Azure Security Specialization</li>
-      <li>IBM Generative AI for Cybersecurity Professionals</li>
-      <li>Cyber Crime Academy – Peel Regional Police</li>
-      <li>ThinkCloudly Cybersecurity Bootcamp</li>
-      <li>ThinkCloudly IT Auditing & GRC Bootcamp</li>
-      <li>Wireshark for Security</li>
-      <li>Metasploit: Ethical Penetration Testing</li>
-      <li>Analyze Network Traffic with TCPDump</li>
-      <li>Introduction to Bash Shell Scripting</li>
-      <li>Microsoft Security, Compliance & Identity Fundamentals</li>
-      <li>Foundations of Cybersecurity – Google</li>
-      <li>Dive Into Kubernetes</li>
-    </ul>
-  </div>
+    <!-- ⭐ Experience Section -->
+    <div class="section" id="experience">
+      <h2>Experience</h2>
 
-  <!-- ⭐ Volunteer Section -->
-  <div class="section" id="volunteer">
-    <h2>Volunteer</h2>
-    <h3>Big Brothers Big Sisters of Peel Region (2015 – 2019)</h3>
-    <ul>
-      <li>Assisted in organizing community activities and supporting newcomer programs.</li>
-      <li>Contributed to engagement initiatives and teamwork-based environments.</li>
-    </ul>
+      <h3>Merchandiser – Shoppers Drug Mart (2020 – Present)</h3>
+      <p>Mississauga, ON</p>
+      <ul>
+        <li>Operated equipment to organize stock efficiently.</li>
+        <li>Opened and closed store independently while maintaining standards.</li>
+        <li>Prepared loss prevention and store reports with attention to detail.</li>
+        <li>Delivered customer service including passport photo services.</li>
+        <li>Recognized as Employee of the Month nine times.</li>
+      </ul>
+
+      <h3>Web Development & AI Chatbot Project – Simcoe Cosmetic Clinic (2026)</h3>
+      <p>Barrie, ON</p>
+      <ul>
+        <li>Developed SEO-optimized WordPress website.</li>
+        <li>Implemented HTTPS and secure authentication.</li>
+        <li>Built Aminos chatbot and integrated into website.</li>
+        <li>Created n8n workflow for secure data processing.</li>
+      </ul>
+    </div>
+
+    <!-- ⭐ Education Section -->
+    <div class="section" id="education">
+      <h2>Education & Certifications</h2>
+      <h3>Bachelor of Information Sciences (Cybersecurity)</h3>
+      <p>Sheridan College – Expected Graduation: 2027/2028</p>
+
+      <h3>Certifications</h3>
+      <ul>
+        <li>Microsoft Cybersecurity Analyst</li>
+        <li>Microsoft Azure Security Specialization</li>
+        <li>IBM Generative AI for Cybersecurity Professionals</li>
+        <li>Cyber Crime Academy – Peel Regional Police</li>
+        <li>ThinkCloudly Cybersecurity Bootcamp</li>
+        <li>ThinkCloudly IT Auditing & GRC Bootcamp</li>
+        <li>Wireshark for Security</li>
+        <li>Metasploit Ethical Penetration Testing</li>
+        <li>Analyze Network Traffic with TCPDump</li>
+        <li>Introduction to Bash Shell Scripting</li>
+        <li>Microsoft Security, Compliance & Identity Fundamentals</li>
+        <li>Foundations of Cybersecurity – Google</li>
+        <li>Dive Into Kubernetes</li>
+      </ul>
+    </div>
+
+    <!-- ⭐ Contact Section -->
+    <div class="section" id="contact">
+      <h2>Contact</h2>
+      <p><strong>Email:</strong> <a href="mailto:mohammedkhanfar32@gmail.com">mohammedkhanfar32@gmail.com</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mohammed-khanfar-46721721b/" target="_blank">linkedin.com/in/mohammed-khanfar-46721721b</a></p>
+      <p><strong>Location:</strong> Mississauga, ON</p>
+    </div>
+
   </div>
 
 </body>
 </html>
+
